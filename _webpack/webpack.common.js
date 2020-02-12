@@ -1,5 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-
 module.exports = {
   entry: {
     app: './src/client/index.js',
@@ -19,4 +19,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'My website',
+      template: path.resolve(__dirname, '../_templates/client.html'),
+    }),
+  ],
 };
