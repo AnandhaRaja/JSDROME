@@ -7,7 +7,7 @@ class App extends React.Component {
   };
 
   increment = () => {
-    const currentCount = this.state.count;
+    let currentCount = this.state.count;
 
     this.setState({
       // eslint-disable-next-line no-magic-numbers
@@ -15,7 +15,7 @@ class App extends React.Component {
     });
   };
   decrement = () => {
-    const currentCount = this.state.count;
+    let currentCount = this.state.count;
 
     this.setState({
       // eslint-disable-next-line no-magic-numbers
@@ -23,9 +23,13 @@ class App extends React.Component {
     });
   };
   resetss = () => {
-    window.location.reload(false);
 
+    this.setState({
+      // eslint-disable-next-line no-magic-numbers
+      count:  0,
+    });
   };
+
   render() {
     return <div>
       <h1>{this.state.count}</h1>
